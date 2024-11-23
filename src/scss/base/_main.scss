@@ -1,0 +1,35 @@
+@use "_basic" as basic;
+
+main {
+  &,
+  & > div.stacks_top,
+  & > div.stacks_top > div > div.stacks_out,
+  & > div.stacks_top > div > div.stacks_out > div.stacks_in,
+  & > div.sling-cms-component,
+  & > div.sling-cms-component > div.sling-cms-component,
+  & > form {
+    & > h1,
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5,
+    & > h6,
+    & > p,
+    & > pre,
+    & > div.TOC,
+    & > ul,
+    & > ol,
+    & > dl,
+    & > .paragraph,
+    & > a,
+    & > .chart-block,
+    & > hr {
+      @include basic.content-block-responsive("small");
+      @include basic.content-block-fixed("large");
+    }
+
+    & > a {
+      display: block;
+    }
+  }
+}

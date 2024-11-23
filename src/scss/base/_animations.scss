@@ -1,0 +1,26 @@
+@keyframes slidein {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes slideout {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+  }
+}

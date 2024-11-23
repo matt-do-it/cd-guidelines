@@ -1,0 +1,163 @@
+/*
+
+.dropdown {
+	& > a {
+		display: block; 
+		color: $color-secondary; 
+		line-height: round($font-size*4);
+		
+		&:hover {
+			color: $color-highlight; 
+		}
+ 
+		.icon {
+			padding-left: 6px; 
+			display: inline-block; 
+		}
+		
+		&:after {
+		  font-family: 'mfg_labs_iconsetregular';
+		  font-style: normal;
+		  speak: none;
+	  	  font-weight: normal;
+	  	  font-size: 1em;
+	  	  -webkit-font-smoothing: antialiased;
+  	      content: "\f004";
+  	      display: block; 
+  	      float: right; 
+  	      padding-left: 10px;
+  	      padding-right: 5px;  
+ 		}
+	}
+
+	.menu {
+			width: 200px; 
+			background: white; 
+			position: absolute; 
+			border-right: 1px solid $color-lines;
+			border-left: 1px solid $color-lines;
+			border-bottom: 1px solid $color-lines;
+			z-index: 4; 
+		
+			visibility: hidden; 
+			opacity: 0; 
+			border-bottom-right-radius: 2px; 
+			border-bottom-left-radius: 2px; 
+			transform: translateY(-30px); 
+				
+			&.visible {
+				visibility: visible; 
+				opacity: .95; 
+				transform: translateY(0px); 
+				transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.1s;
+			}
+
+			&.invisible {
+				transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.1s;
+			}
+			
+			
+			
+			ul {
+				list-style: none; 
+				padding: 0px; 
+				margin: 0px; 
+			
+				li {
+					width: 100%; 
+					box-sizing: border-box; 
+					text-align: left; 
+					padding: 0px 10px; 
+					line-height: round($font-size*4); 
+				
+					a {
+						color: $color-secondary; 
+						display: block; 
+					}
+				
+					&.active {
+						a {
+							color: $color-highlight;
+							font-weight: bold; 
+						}
+					}
+				
+					a:hover {
+						color: $color-highlight; 
+					}
+				}
+		}
+			
+	}
+}
+
+	
+	
+@include media-breakpoint("small") {
+
+.dropdown {
+	& > a {
+		display: block; 
+		color: $color-secondary;
+		font-weight: bold; 
+		cursor: default; 
+		line-height: round($font-size*3.0); 
+
+ 
+		.icon {
+			display: inline-block; 
+		}
+		
+		&:after {
+			content: "";
+		}
+		
+		&:hover {
+			color: $color-secondary;
+		}
+	}
+
+	
+	.menu {
+			position: relative; 
+			border: none; 		
+			visibility: visible; 
+			opacity: 1; 
+			transform: translateY(0px); 
+
+			ul {
+				list-style: none; 
+				padding: 0px; 
+				margin: 0px; 
+				
+				li {
+					width: 100%; 
+					box-sizing: border-box; 
+					text-align: left; 
+					padding: 0px; 
+					line-height: round($font-size*3.0); 
+					
+					a {
+						color: $color-secondary; 
+						display: block; 
+					}
+				
+					&.active {
+						a {
+							color: $color-highlight;
+							font-weight: bold; 
+						}
+					}
+				
+					a:hover {
+						color: $color-highlight; 
+					}
+				}
+		}
+			
+	}
+}
+
+}
+
+*/

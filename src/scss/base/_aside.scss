@@ -1,0 +1,7 @@
+@use "~sass-rem" as rem;
+@use "_basic" as basic;
+
+aside#actions {
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-fixed-sized("large", 12);
+}

@@ -1,0 +1,134 @@
+@use "_basic" as basic;
+
+.carousel {
+  position: relative;
+
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-fixed("large");
+
+  &.full-width {
+    @include basic.content-block-hero("small");
+    @include basic.content-block-hero("large");
+  }
+
+  .scroller {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    .content {
+      position: relative;
+      width: 100000px;
+
+      .section {
+        position: relative;
+        display: block;
+        float: left;
+
+        picture {
+          img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel .content > .section > img,
+.carousel .content > .item > a > img {
+  line-height: 1;
+}
+.carousel .content > .active,
+.carousel .content > .next,
+.carousel .content > .prev {
+  display: block;
+}
+.carousel .content > .active {
+  left: 0;
+}
+
+.carousel .content > .next,
+.carousel .content > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
+.carousel-control.left {
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  margin-top: -16px;
+  background-image: url(../../images/base/arrow_left.png);
+}
+
+.carousel-control.right {
+  right: 10px;
+  left: auto;
+  top: 50%;
+  margin-top: -16px;
+  width: 32px;
+  height: 32px;
+  background-image: url(../../images/base/arrow_right.png);
+}
+
+.carousel-control.left:hover,
+.carousel-control.left:focus {
+  background-image: url(../../images/base/arrow_left_hover.png);
+}
+.carousel-control.right:hover,
+.carousel-control.right:focus {
+  background-image: url(../../images/base/arrow_right_hover.png);
+}
+
+/** Carousel Pagination **/
+.carousel .controls {
+  text-align: center;
+  margin: 10px 0px;
+  padding: 0px 0px;
+}
+
+.carousel .controls li {
+  text-decoration: none;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0px 3px;
+}
+
+.carousel .controls li a {
+  display: block;
+  background: #666;
+  color: #4e443c;
+  border-radius: 14px;
+  text-align: center;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.carousel .controls li.active a {
+  background: rgb(0, 142, 214);
+  width: 10px;
+  cursor: pointer;
+  height: 10px;
+}

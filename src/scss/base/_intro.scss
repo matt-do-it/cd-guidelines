@@ -1,0 +1,26 @@
+@use "_basic" as basic;
+@use "sass:math";
+
+div.intro {
+  font-size: math.round(basic.$font-size * 1.28);
+  line-height: 1.5;
+
+  font-weight: 200;
+  color: black;
+
+  text-align: center;
+
+
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-fixed-sized("large", 8);
+
+  @include basic.media-breakpoint("small") {
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+  @include basic.media-breakpoint("large") {
+    font-size: math.round(basic.$font-size * 1.28);
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+}

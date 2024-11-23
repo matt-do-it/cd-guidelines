@@ -1,0 +1,129 @@
+@use "_basic" as basic;
+@use "sass:math";
+@use "sass:map";
+
+$form-width-corr: 4px;
+$label-width: 158px;
+$label-spacing: 3px;
+
+.form {
+  position: relative;
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-grid("large");
+
+  & > .row,
+  & > div.sling-cms-component > div.sling-cms-component > .row {
+    @include basic.clearfix;
+
+    margin-bottom: 20px;
+
+    & > .field {
+      @include basic.grid-element("large", 4);
+
+      &.size-2 {
+        @include basic.grid-element("large", 2);
+      }
+      &.size-6 {
+        @include basic.grid-element("large", 6);
+      }
+      &.size-8 {
+        @include basic.grid-element("large", 8);
+      }
+    }
+
+    & > .field,
+    & > div.sling-cms-component > div.sling-cms-component > .field {
+      label {
+        font-weight: bold;
+        display: block;
+      }
+
+      .regular > input,
+      .regular > textarea,
+      .regular > select {
+        border-style: solid;
+        border-color: #666;
+        border-width: 1px;
+        font-family:
+          "Lucida Grande",
+          Arial,
+          sans serif;
+        -webkit-border-radius: 3px;
+        font-size: math.round(basic.$font-size * 1.1);
+        height: math.round(basic.$font-size * 2);
+        font-weight: 200;
+        color: #666;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        height: 150px;
+      }
+
+      &.field-error {
+        label {
+          color: #fc4108;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea,
+        select {
+          border-color: #fc4108;
+        }
+      }
+
+      .checkbox {
+        position: relative;
+        input {
+          width: inherit;
+        }
+        label {
+          font-weight: normal;
+          display: inline;
+        }
+      }
+
+      &.field-submit {
+        margin-top: 12px;
+
+        .loader {
+          display: none;
+          position: relative;
+          width: 16px;
+          height: 16px;
+          background-image: url(../../images/base/ajax-loader.gif);
+          &.active {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .help {
+      display: block;
+
+      font-size: math.round(basic.$font-size);
+      line-height: math.round(basic.$line-height);
+
+      @include basic.grid-element("large", 12);
+
+
+      &.error {
+        color: #fc4108;
+      }
+    }
+  }
+}
+
+.link-submit {
+  padding: 15px 0px 0px 0px;
+}
+
+.link-submit a {
+}
+
+.field.error select {
+  border-color: red;
+}

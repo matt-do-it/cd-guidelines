@@ -1,0 +1,61 @@
+@use "~sass-rem" as rem;
+@use "_basic" as basic;
+
+main > ul.tab-select,
+ul.tab-menu {
+  & {
+    @include basic.content-block-responsive("small");
+    @include basic.content-block-fixed("large");
+  }
+}
+
+ul.tab-select,
+ul.tab-menu {
+  & {
+    list-style: none;
+    padding: 0;
+  }
+
+  &.tab-menu {
+    text-align: center;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  li {
+    text-align: center;
+    display: inline-block;
+
+    a {
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: #ccc;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    &.active {
+      color: black;
+      font-weight: bold;
+
+      a {
+        color: black;
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}
+
+main.article-layout > article > ul.tab-select,
+ul.tab-menu {
+  width: 100%;
+}

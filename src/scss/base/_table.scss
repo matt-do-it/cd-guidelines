@@ -1,0 +1,68 @@
+@use "_basic" as basic;
+
+main > table {
+  border-collapse: collapse;
+
+  @include basic.content-block-fixed("large");
+
+  @include basic.media-breakpoint("small") {
+    width: calc(100% - 30px);
+
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+main article table {
+  width: 100%;
+}
+
+table th {
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0px;
+  font-family: basic.$font-family;
+  color: #333;
+  font-size: basic.$font-size;
+  line-height: basic.$line-height;
+  font-weight: bold;
+
+  @media print {
+    font-size: basic.$print-font-size;
+  }
+}
+
+table td {
+  border-bottom: 1px solid #eee;
+  padding: 5px 0px;
+  font-family: basic.$font-family;
+  color: #333;
+  font-size: basic.$font-size;
+  line-height: basic.$line-height;
+  font-weight: basic.$font-weight;
+
+  @media print {
+    font-size: basic.$print-font-size;
+  }
+}
+
+table tr.active td {
+  background: #fafafa;
+}
+
+table caption {
+  color: #333;
+  font-size: basic.$font-size;
+  line-height: basic.$line-height;
+  margin-bottom: 0.75em;
+  text-align: left;
+  counter-increment: table-section;
+
+  @media print {
+    font-size: basic.$print-font-size;
+  }
+}
+
+table caption::before {
+  content: "Tabelle " counter(table-section) ": ";
+}

@@ -1,0 +1,80 @@
+@use "_basic" as basic;
+@use "sass:math";
+
+main picture,
+main figure {
+  @include basic.img-responsive;
+}
+main {
+  counter-reset: figure-section;
+}
+main figure {
+  figcaption {
+    display: block;
+    counter-increment: figure-section;
+
+    &::before {
+      content: "Abbildung " counter(figure-section) ": ";
+    }
+    @include basic.media-breakpoint("small") {
+      padding-left: 15px;
+    }
+  }
+}
+
+main {
+  &,
+  & > div.stacks_top,
+  & > div.stacks_top > div > div.stacks_out,
+  & > div.stacks_top > div > div.stacks_out > div.stacks_in,
+  & > div.sling-cms-component,
+  & > div.sling-cms-component > div.sling-cms-component,
+  & > form {
+    & > picture,
+    & > figure,
+    & > .picture,
+    & > .figure {
+      display: block;
+
+      @include basic.content-block-responsive("small");
+      @include basic.content-block-fixed("large");
+
+      @include basic.img-responsive;
+
+      @include basic.media-breakpoint("small") {
+        width: 100%;
+
+        @include basic.content-block-hero("small");
+
+
+        img {
+          width: 100%;
+          line-height: 0px;
+        }
+      }
+
+      &.no-spacing-top {
+        margin-top: 0px;
+      }
+
+      &.no-spacing-bottom {
+        margin-bottom: 0px;
+      }
+
+      &.hero {
+        width: 100%;
+      }
+
+      &.size-10 {
+        @include basic.content-block-fixed-sized("large", 10);
+      }
+    }
+  }
+}
+
+main article figure,
+main > article picture {
+  display: block;
+  width: 100%;
+  margin: 2rem 0rem;
+}

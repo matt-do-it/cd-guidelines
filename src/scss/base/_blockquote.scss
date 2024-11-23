@@ -1,0 +1,50 @@
+@use "_basic" as basic;
+@use "sass:math";
+@use "sass:map";
+
+blockquote {
+  font-size: math.round(basic.$font-size);
+  line-height: math.round(basic.$line-height);
+  font-weight: 200;
+  color: black;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  padding-left: 25px;
+  margin: 2rem 0rem;
+
+  box-sizing: border-box;
+  background: rgb(240, 240, 240);
+  border-left: 5px solid rgb(180, 180, 180);
+}
+
+main > blockquote {
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-fixed("large");
+}
+
+main > blockquote + address {
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-fixed("large");
+
+  @include basic.media-breakpoint("large") {
+    padding-left: 100px;
+    width: page-width("large")-100px;
+  }
+}
+
+q:before {
+  content: '"';
+}
+
+q:after {
+  content: '" [' attr(cite) "]";
+}
+
+main article > blockquote {
+  width: 100%;
+}
+
+main article blockquote + address {
+  width: 100%;
+}

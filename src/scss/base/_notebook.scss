@@ -1,0 +1,65 @@
+.notebook {
+}
+
+.notebook .cell {
+}
+
+.notebook .cell .outputs {
+}
+
+.notebook .cell .outputs .raw,
+.notebook .cell .outputs .markdown,
+.cell .outputs .javascript {
+  @include content-block-responsive("small");
+  @include content-block-fixed-sized("large", 12);
+}
+
+.notebook .cell .output .plain {
+  @include content-block-responsive("small");
+  @include content-block-fixed-sized("large", 12);
+
+  background: rgb(240, 240, 240);
+  padding: 10px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 3px;
+  font-family: "Menlo";
+  font-size: 14px;
+}
+
+.notebook .cell .output.error .plain,
+.notebook .cell .output.stream.stderr .plain {
+  color: rgb(250, 128, 114);
+}
+
+.notebook .cell .output .image {
+  @include content-block-responsive("small");
+  @include content-block-fixed-sized("large", 12);
+  margin: 0.5em auto;
+}
+
+.notebook .cell .output svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+
+.notebook .cell .output .image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+
+.notebook .cell .output img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.5em auto;
+}
+.notebook .cell .output canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.5em auto;
+}

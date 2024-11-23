@@ -1,0 +1,136 @@
+@use "sass:map";
+@use "sass:math";
+@use "_basic" as basic;
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: basic.$font-family;
+  color: #333;
+  font-size: basic.$font-size;
+  line-height: basic.$line-height;
+  font-weight: basic.$font-weight;
+
+  background-color: white;
+
+  counter-reset: table-section;
+  counter-reset: figure-section;
+
+  overflow-x: hidden; 
+  
+  @include basic.media-breakpoint("large") {
+    min-width: calc(map.get(basic.$page-width, "large") + 2 * page-gutter("large"));
+  }
+
+  @media print {
+    font-size: basic.$print-font-size;
+  }
+}
+
+h1 {
+  font-size: math.round(basic.$font-size * 3.5);
+  font-weight: 100;
+  line-height: math.round(basic.$line-height * 2.6);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: basic.$color-default;
+
+  @media print {
+    font-size: math.round(basic.$print-font-size * 3.5);
+  }
+}
+
+h1 a,
+h1 a:visited {
+  color: basic.$color-default;
+}
+
+h1 .sub {
+  font-weight: 90;
+  color: basic.$color-secondary;
+}
+
+h2 {
+  font-size: math.round(basic.$font-size * 2.1);
+  line-height: math.round(basic.$line-height * 1.7);
+  font-weight: 200;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  color: basic.$color-default;
+
+  @media print {
+    font-size: math.round(basic.$print-font-size * 2.1);
+  }
+}
+
+h2 a,
+h2 a:visited {
+  color: basic.$color-default;
+}
+
+h2 .sub {
+  font-weight: 100;
+  color: basic.$color-secondary;
+}
+
+h3 {
+  font-size: math.round(basic.$font-size * 1.3);
+  line-height: math.round(basic.$line-height * 1.2);
+  margin-top: 0px;
+  margin-bottom: 7px;
+  font-weight: 500;
+
+  @media print {
+    font-size: math.round(basic.$print-font-size * 1.3);
+  }
+}
+
+h3 .sub {
+  color: basic.$color-secondary;
+}
+
+h4 {
+  font-size: math.round(basic.$font-size);
+  line-height: math.round(basic.$line-height);
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+
+  @media print {
+    font-size: math.round(basic.$print-font-size);
+  }
+}
+
+.description {
+  display: block;
+  font-size: math.round(basic.$font-size);
+  line-height: math.round(basic.$line-height);
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: blue;
+}
+
+.centered {
+  text-align: center;
+}
+
+div.link {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+hr {
+  clear: both;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  border: 0;
+  height: 0px;
+
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}

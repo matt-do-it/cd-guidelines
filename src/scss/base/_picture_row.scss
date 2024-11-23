@@ -1,0 +1,42 @@
+@use "_basic" as basic;
+
+.picture-row {
+  @include basic.content-block-grid("large");
+
+  @include basic.media-breakpoint("small") {
+    picture {
+      @include basic.content-block-hero("small");
+
+      width: 100%;
+      height: 450px;
+
+      img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &.size-4 {
+    picture {
+      @include basic.grid-element("large", 4);
+      @include basic.media-breakpoint("large") {
+        @include basic.img-responsive;
+      }
+    }
+  }
+
+  &.hero {
+    @include basic.content-block-grid-hero("large");
+
+    &.size-4 {
+      picture {
+        @include basic.grid-hero-element("large", 4);
+        @include basic.media-breakpoint("large") {
+          @include basic.img-responsive;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "_basic" as basic;
+
+main > section.article-layout {
+  @include basic.content-block-fixed-grid("large");
+
+  aside.toc {
+    @include basic.content-block-responsive("small");
+    @include basic.grid-element("large", 3);
+
+    @include basic.media-breakpoint("large") {
+      position: sticky;
+      top: 2rem;
+    }
+  }
+
+  article {
+    @include basic.content-block-responsive("small");
+    @include basic.grid-element("large", 9);
+  }
+
+  aside.toc {
+    h3 {
+      margin-top: 2rem;
+    }
+    & > ul {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      position: relative;
+
+      & > li {
+        & > a,
+        & > a:visited {
+          font-size: basic.$font-size-large;
+          line-height: basic.$line-height-large;
+          color: basic.$color-default;
+          font-weight: basic.$font-weight-large;
+        }
+        & > ul {
+          margin: 0px;
+          margin-left: 20px;
+          padding: 0px;
+          list-style: none;
+          position: relative;
+
+          & > li {
+            & > a,
+            & > a:visited {
+              color: basic.$color-default;
+            }
+          }
+        }
+      }
+    }
+  }
+}

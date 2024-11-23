@@ -1,0 +1,32 @@
+@use "_basic" as basic;
+
+.message {
+
+  padding: 10px 20px;
+  box-sizing: border-box;
+  /*	border-top: 1px solid rgb(240, 240, 240); 
+	border-right: 1px solid rgb(240, 240, 240); 
+	border-bottom: 1px solid rgb(240, 240, 240);
+	border-radius: 0px 2px 2px 0px;  
+*/
+  font-weight: bold;
+
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-fixed("large");
+}
+
+.message.error {
+  background-color: #fc4108;
+  color: white;
+  border-radius: 5px;
+}
+.message.success {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+}
+.message.warning {
+  background-color: #fc780a;
+  color: white;
+  border-radius: 5px;
+}

@@ -1,0 +1,64 @@
+@use "_basic" as basic;
+
+.articles {
+  h2 {
+    margin-bottom: 2rem;
+
+    @include basic.content-block-responsive("small");
+    @include basic.content-block-fixed("large");
+  }
+
+  p {
+    @include basic.content-block-responsive("small");
+    @include basic.content-block-fixed("large");
+  }
+
+  .articles-list {
+    @include basic.content-block-responsive("small");
+    @include basic.content-block-fixed-grid("large");
+
+    article {
+      margin-bottom: 2rem;
+
+      @include basic.grid-element-responsive("large", 6);
+      @include basic.img-responsive;
+
+      a,
+      a:visited {
+        color: black;
+        text-decoration: none;
+      }
+
+      .caption {
+        .category {
+          margin-bottom: 0.5rem;
+        }
+
+        h3 {
+          margin-top: 0rem;
+          margin-bottom: 0.5rem;
+
+          &:after {
+            font-family: "Bosch-UI-Icon", sans-serif !important;
+            font-size: 24px;
+            margin-left: 8px;
+            font-weight: 400;
+            font-style: normal;
+          }
+        }
+        p {
+          margin: 0rem;
+        }
+      }
+
+      &.size-4 {
+        @include basic.grid-element-responsive("large", 4);
+
+        .caption {
+          h3 {
+          }
+        }
+      }
+    }
+  }
+}

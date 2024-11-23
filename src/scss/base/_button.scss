@@ -1,0 +1,161 @@
+main {
+  & button,
+  & a.button,
+  & input[type="submit"],
+  & input[type="button"] {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(0, 151, 227) 0%,
+      rgb(0, 142, 214) 100%
+    );
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 5px;
+    border-radius: 20px;
+    text-indent: 0;
+    border: none;
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 18px;
+    text-decoration: none;
+    text-align: center;
+    padding: 3px 20px;
+    cursor: pointer;
+
+    &:hover {
+      background: #0085c7;
+    }
+
+    &:active {
+      background: #005daa;
+    }
+
+    &.secondary {
+      background-image: linear-gradient(
+        to bottom,
+        rgb(150, 150, 150) 0%,
+        rgb(137, 137, 137) 100%
+      );
+      background-color: rgb(150, 150, 150);
+      &:hover {
+        background: rgb(137, 137, 137);
+      }
+
+      &:active {
+        background: rgb(99, 99, 99);
+      }
+    }
+    &.attention {
+      background-image: linear-gradient(
+        to bottom,
+        rgb(255, 0, 0) 0%,
+        rgb(230, 0, 0) 100%
+      );
+      background-color: rgb(255, 0, 0);
+      &:hover {
+        background: rgb(230, 0, 0);
+      }
+
+      &:active {
+        background: rgb(200, 0, 0);
+      }
+    }
+
+    &.small {
+      padding: 1px 10px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+  }
+}
+
+.button-facebook {
+  display: inline-block;
+  background-color: #005daa;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(150, 150, 150) 0%,
+    rgb(137, 137, 137) 100%
+  );
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-image: url(../../images/base/social-media-facebook.png);
+}
+
+.button-linkedin {
+  display: inline-block;
+  background-color: #005daa;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(150, 150, 150) 0%,
+    rgb(137, 137, 137) 100%
+  );
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-image: url(../../images/base/social-media-linkedin.png);
+}
+
+.button-pinterest {
+  display: inline-block;
+  background-color: #005daa;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(150, 150, 150) 0%,
+    rgb(137, 137, 137) 100%
+  );
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-image: url(../../images/base/social-media-pinterest.png);
+}
+
+.button-twitter {
+  display: inline-block;
+  background-color: #005daa;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(150, 150, 150) 0%,
+    rgb(137, 137, 137) 100%
+  );
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-image: url(../../images/base/social-media-twitter.png);
+}
+
+.button-slide {
+  position: relative;
+  width: 34px;
+  height: 22px;
+  background: #d8d9db;
+  border-radius: 100px;
+  transition: background 0.5s;
+}
+
+.button-slide.active {
+  background: #0094de;
+}
+
+.button-slide .slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 20px;
+  background-color: white;
+  transition: left 0.5s;
+}
+
+.button-slide.active .slider {
+  left: 14px;
+}

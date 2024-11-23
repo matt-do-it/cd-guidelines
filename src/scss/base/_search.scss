@@ -1,0 +1,38 @@
+@use "~sass-rem" as rem;
+@use "_basic" as basic;
+
+main > nav {
+  text-align: center;
+
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-fixed("large");
+
+  @include basic.clearfix;
+
+
+  ul {
+    margin: 0px auto;
+    padding: 0px;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    @include basic.clearfix;
+
+    li {
+      margin: 0px;
+      padding: 0px;
+      display: block;
+      position: relative;
+      display: inline-block;
+
+      span.disabled {
+        color: basic.$color-secondary;
+      }
+      span,
+      a {
+        display: inline-block;
+        padding: 10px 20px;
+      }
+    }
+  }
+}

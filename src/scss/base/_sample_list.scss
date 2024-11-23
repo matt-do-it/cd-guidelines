@@ -1,0 +1,38 @@
+@use "~sass-rem" as rem;
+@use "_basic" as basic;
+
+.sample-list {
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-grid("large");
+
+  .item {
+    box-sizing: border-box;
+    border: 1px;
+    padding: 20px 5px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+  }
+
+  &.size-1 {
+    .item {
+      @include basic.grid-element("large", 1);
+    }
+  }
+
+  &.size-12 {
+    .item {
+      @include basic.grid-element("large", 12);
+    }
+  }
+
+  &.size-6 {
+    .item {
+      @include basic.grid-element("large", 6);
+    }
+  }
+  &.size-4 {
+    .item {
+      @include basic.grid-element("large", 4);
+    }
+  }
+}

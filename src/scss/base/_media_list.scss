@@ -1,0 +1,126 @@
+@use "_basic" as basic;
+
+.media-list {
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-grid("large");
+
+  &.size-1 {
+    .item {
+      @include basic.grid-element("large", 1);
+    }
+  }
+
+  &.size-2 {
+    .item {
+      @include basic.grid-element("large", 2);
+    }
+
+    .item:nth-child(6n + 7) {
+      clear: both;
+    }
+  }
+
+  &.size-12 {
+    .item {
+      @include basic.grid-element("large", 12);
+    }
+  }
+
+  &.size-6 {
+    & > .sling-cms-component {
+      border: none;
+    }
+    & > .item {
+      @include basic.grid-element("large", 6);
+    }
+    .sling-cms-contained,
+    & > .item {
+      &:nth-child(2n + 3) {
+        clear: both;
+      }
+    }
+  }
+  &.size-4 {
+    & > .item {
+      @include basic.grid-element("large", 4);
+    }
+    & > .item {
+      &:nth-child(3n + 4) {
+        clear: both;
+      }
+    }
+  }
+
+  .item {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    h4 {
+      margin: 0px;
+    }
+
+    a,
+    a:visited {
+      color: black;
+    }
+
+    &.bordered {
+      img {
+        border: 1px solid rgb(150, 150, 150);
+        border-radius: 5px;
+      }
+    }
+    padding-bottom: 20px;
+  }
+
+  &.floating,
+  .sling-cms-component {
+    .item {
+      img {
+        float: left;
+        width: basic.grid-element-width("large", 1);
+        height: basic.grid-element-width("large", 1);
+        padding-right: basic.element-gutter("large");
+        padding-bottom: 10px;
+        object-fit: contain;
+      }
+
+      .caption {
+        width: calc(
+          basic.grid-element-width("large", 4) - basic.grid-element-width("large", 1) - basic.element-gutter(
+              "large"
+            )
+        );
+        float: left;
+      }
+
+      @include basic.clearfix;
+    }
+  }
+
+  @include basic.media-breakpoint("small") {
+    .item {
+      img {
+        float: left;
+        width: basic.grid-element-width("large", 1);
+        height: basic.grid-element-width("large", 1);
+        margin-right: basic.element-gutter("small");
+        margin-bottom: 10px;
+        object-fit: contain;
+      }
+
+      .caption {
+        width: calc(
+          basic.grid-element-width("large", 4) - basic.grid-element-width("large", 1) - basic.element-gutter(
+              "small"
+            )
+        );
+        float: left;
+      }
+
+      @include basic.clearfix;
+    }
+  }
+}

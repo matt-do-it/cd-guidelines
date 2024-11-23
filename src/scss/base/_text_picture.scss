@@ -1,0 +1,60 @@
+@use "~sass-rem" as rem;
+@use "_basic" as basic;
+
+main > .text-picture {
+  @include basic.content-block-grid("large");
+
+  .sling-cms-contained {
+    @include basic.grid-element("large", 6);
+  }
+
+  @include basic.media-breakpoint("large") {
+    & > picture,
+    & > .picture {
+      @include basic.grid-element("large", 6);
+    }
+    picture,
+    .picture {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .text {
+      @include basic.grid-element("large", 6);
+    }
+
+    &.swap {
+      & > picture,
+      & > .picture {
+        float: right;
+      }
+      .text {
+        float: left;
+      }
+    }
+  }
+  @include basic.media-breakpoint("small") {
+    & > picture,
+    & > .picture {
+      @include basic.content-block-hero("small");
+
+      width: 100%;
+      height: 450px;
+    }
+
+    picture,
+    .picture {
+      img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+      }
+    }
+
+    .text {
+      @include basic.content-block-responsive("small");
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use "~sass-rem" as rem;
+@use "_basic" as basic;
+
+.text-columns {
+  @include basic.content-block-responsive("small");
+  @include basic.content-block-grid("large");
+
+  &.size-6 {
+    .sling-cms-contained {
+      @include basic.grid-element("large", 6);
+    }
+  }
+  &.size-4 {
+    .sling-cms-contained {
+      @include basic.grid-element("large", 4);
+    }
+  }
+
+  @include basic.media-breakpoint("small") {
+    .text {
+      margin-bottom: 15px;
+    }
+  }
+
+  &.size-4 {
+    .text {
+      @include basic.grid-element("large", 4);
+    }
+  }
+  &.size-6 {
+    .text {
+      @include basic.grid-element("large", 6);
+    }
+  }
+}
