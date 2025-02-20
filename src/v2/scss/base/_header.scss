@@ -161,7 +161,7 @@ header {
 
           &.breadcrumb > a,
           &.breadcrumb > a:visited {
-            background-image: url(../../images/base/triangle-right.png);
+            background-image: url(../images/base/triangle-right.png);
             background-repeat: no-repeat;
             background-position: right center;
             padding-right: basic.$menu-item-large-horizontal-space + 10px;
@@ -394,7 +394,6 @@ header {
                 top: 2px;
               }
             }
-
 
             &:hover {
               color: basic.$color-highlight;

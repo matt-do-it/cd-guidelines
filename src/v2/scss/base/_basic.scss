@@ -147,7 +147,6 @@ $menu-item-small-color-highlight: $color-highlight;
 
 @mixin content-block-fixed($breakpoint) {
   @include media-breakpoint($breakpoint) {
-
     margin-left: auto;
     margin-right: auto;
 
@@ -165,7 +164,6 @@ $menu-item-small-color-highlight: $color-highlight;
     width: math.ceil(grid-element-width($breakpoint, $size));
 
     @include content-block;
-
   }
 }
 
@@ -198,9 +196,7 @@ $menu-item-small-color-highlight: $color-highlight;
 
     @include content-block;
 
-
     @include clearfix;
-
   }
 }
 
@@ -284,7 +280,6 @@ $menu-item-small-color-highlight: $color-highlight;
     width: 100%;
 
     padding: 0px 0px;
-
   }
 }
 

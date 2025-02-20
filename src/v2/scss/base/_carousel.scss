@@ -77,7 +77,7 @@
   height: 32px;
   top: 50%;
   margin-top: -16px;
-  background-image: url(../../images/base/arrow_left.png);
+  background-image: url(../images/base/arrow_left.png);
 }
 
 .carousel-control.right {
@@ -87,16 +87,16 @@
   margin-top: -16px;
   width: 32px;
   height: 32px;
-  background-image: url(../../images/base/arrow_right.png);
+  background-image: url(../images/base/arrow_right.png);
 }
 
 .carousel-control.left:hover,
 .carousel-control.left:focus {
-  background-image: url(../../images/base/arrow_left_hover.png);
+  background-image: url(../images/base/arrow_left_hover.png);
 }
 .carousel-control.right:hover,
 .carousel-control.right:focus {
-  background-image: url(../../images/base/arrow_right_hover.png);
+  background-image: url(../images/base/arrow_right_hover.png);
 }
 
 /** Carousel Pagination **/

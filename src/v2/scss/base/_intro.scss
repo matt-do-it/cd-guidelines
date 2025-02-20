@@ -10,7 +10,6 @@ div.intro {
 
   text-align: center;
 
-
   @include basic.content-block-responsive("small");
   @include basic.content-block-fixed-sized("large", 8);
 

@@ -89,9 +89,10 @@
 
       .caption {
         width: calc(
-          basic.grid-element-width("large", 4) - basic.grid-element-width("large", 1) - basic.element-gutter(
-              "large"
-            )
+          basic.grid-element-width("large", 4) - basic.grid-element-width(
+              "large",
+              1
+            ) - basic.element-gutter("large")
         );
         float: left;
       }
@@ -113,9 +114,10 @@
 
       .caption {
         width: calc(
-          basic.grid-element-width("large", 4) - basic.grid-element-width("large", 1) - basic.element-gutter(
-              "small"
-            )
+          basic.grid-element-width("large", 4) - basic.grid-element-width(
+              "large",
+              1
+            ) - basic.element-gutter("small")
         );
         float: left;
       }

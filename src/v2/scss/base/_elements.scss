@@ -16,10 +16,12 @@ body {
   counter-reset: table-section;
   counter-reset: figure-section;
 
-  overflow-x: hidden; 
-  
+  overflow-x: hidden;
+
   @include basic.media-breakpoint("large") {
-    min-width: calc(map.get(basic.$page-width, "large") + 2 * page-gutter("large"));
+    min-width: calc(
+      map.get(basic.$page-width, "large") + 2 * page-gutter("large")
+    );
   }
 
   @media print {

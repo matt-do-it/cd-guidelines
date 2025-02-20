@@ -21,12 +21,15 @@ header .site-graphic {
     )
   );
   $site-top-small-logo-width: calc(
-    math.round(($site-top-small-logo-height) * basic.$site-logo-small-aspect-ratio)
+    math.round(
+      ($site-top-small-logo-height) * basic.$site-logo-small-aspect-ratio
+    )
   );
 
   $site-top-logo-height: calc(
     math.round(
-      (basic.$site-top-height) - basic.$site-top-leading-space - basic.$site-top-trailing-space
+      (basic.$site-top-height) - basic.$site-top-leading-space -
+        basic.$site-top-trailing-space
     )
   );
   $site-top-logo-width: calc(
@@ -88,7 +91,10 @@ header .site-graphic {
       top: calc(
         math.round(
           basic.$site-top-small-leading-space +
-            math.div($site-top-small-logo-height - basic.$site-title-small-font-size, 2)
+            math.div(
+              $site-top-small-logo-height - basic.$site-title-small-font-size,
+              2
+            )
         )
       );
       left: calc(
@@ -103,12 +109,14 @@ header .site-graphic {
     @include basic.media-breakpoint("large") {
       top: calc(
         math.round(
-          math.div(basic.$site-top-leading-space +
-            ($site-top-logo-height - basic.$site-title-font-size), 2)
+            basic.$site-top-leading-space +
+              math.div($site-top-logo-height - basic.$site-title-font-size,
+            2)
         )
       );
       left: calc(
-        basic.page-gutter("large") + $site-top-logo-width + basic.element-gutter("large")
+        basic.page-gutter("large") + $site-top-logo-width +
+          basic.element-gutter("large")
       );
       right: page-gutter("large");
       height: basic.$site-title-font-size;
@@ -131,7 +139,7 @@ header .site-graphic {
   }
 
   .expand {
-    background-image: url(../../images/base/hamburger-closed.svg);
+    background-image: url(../images/base/hamburger-closed.svg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 26px 30px;
@@ -146,14 +154,18 @@ header .site-graphic {
       right: calc(basic.element-gutter("small") + basic.page-gutter("small"));
       top: calc(
         math.round(
-          math.div(basic.$site-top-small-leading-space + ($site-top-small-logo-height - 26px), 2)
+          math.div(
+            basic.$site-top-small-leading-space +
+              ($site-top-small-logo-height - 26px),
+            2
+          )
         )
       );
       display: block;
     }
 
     &.expanded {
-      background-image: url(../../images/base/hamburger-open.svg);
+      background-image: url(../images/base/hamburger-open.svg);
     }
   }
 }
